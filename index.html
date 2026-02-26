@@ -84,7 +84,7 @@ function iniciarTiempoReal() {
 
         //console.log("Trenes:", data.entity?.length);
 
-        const features = (data?.entity || [])
+        const features = (data.data?.entity || [])
           .filter(e => e.vehicle && e.vehicle.position)
           .map(e => {
 
@@ -147,6 +147,7 @@ cargarShapes().then(() => {
   </script>
 </body>
 </html>
+
 
 
 
