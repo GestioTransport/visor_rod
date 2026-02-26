@@ -74,7 +74,7 @@ async function cargarShapes() {
 
 function iniciarTiempoReal() {
 
-  const trenesURL = "/api/trenes";
+  const trenesURL = "https://visor1.onrender.com/api/trenes";
 
   const realtimeLayer = L.realtime(
     async (success, error) => {
@@ -84,7 +84,7 @@ function iniciarTiempoReal() {
 
         //console.log("Trenes:", data.entity?.length);
 
-        const features = (data.entity || [])
+        const features = (data?.entity || [])
           .filter(e => e.vehicle && e.vehicle.position)
           .map(e => {
 
@@ -126,7 +126,7 @@ function iniciarTiempoReal() {
       }
     },
     {
-      interval: 120000,
+      interval: 20000,
       pointToLayer: (feature, latlng) =>
      L.circleMarker(latlng, {
           radius: 4.5,
@@ -147,6 +147,7 @@ cargarShapes().then(() => {
   </script>
 </body>
 </html>
+
 
 
 
