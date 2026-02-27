@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Mapa Rodalies en tiempo real</title>
+  <title>Línies Rodalies</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -130,7 +130,7 @@ function iniciarTiempoReal() {
       pointToLayer: (feature, latlng) =>
      L.circleMarker(latlng, {
           radius: 4.5,
-          color: "#2E2E2E",
+          color: "#0a0a0a",
           weight: 0.5,
           fillColor: feature.properties.color || "#FF0000",
           fillOpacity: 1,
@@ -147,6 +147,7 @@ cargarShapes().then(() => {
   </script>
 </body>
 </html>
+
 
 
 
